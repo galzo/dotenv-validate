@@ -12,6 +12,7 @@
   "scripts": {
     "clean": "rimraf ./build",
     "build": "yarn clean && tsc",
+    "test": "jest --config jestconfig.json",
     "start:dev": "nodemon ./src/index.ts",
     "start:prod": "yarn build && node build/index.js",
     "lint": "eslint . --ext .ts",
