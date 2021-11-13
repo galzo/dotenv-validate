@@ -9,6 +9,10 @@
   ],
   "author": "Gal Zohar <galzohar@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/galzo/dotenv-validate.git"
+  },
   "scripts": {
     "clean": "rimraf ./build",
     "build": "yarn clean && tsc",
@@ -23,6 +27,16 @@
     "version": "yarn prettify && git add -A src",
     "postversion": "git push && push --tags"
   },
+  "bugs": {
+    "url": "https://github.com/galzo/dotenv-validate/issues"
+  },
+  "keywords": [
+    "dotenv",
+    ".env",
+    "env",
+    "validate",
+    "environment"
+  ],
   "devDependencies": {
     "@types/jest": "^27.0.2",
     "@types/mocha": "^9.0.0",
