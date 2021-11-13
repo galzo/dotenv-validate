@@ -12,11 +12,16 @@
   "scripts": {
     "clean": "rimraf ./build",
     "build": "yarn clean && tsc",
+    "prettify": "prettier --config .prettierrc.json 'src/**/*.ts' --write",
+    "lint": "eslint . --ext .ts",
     "test": "jest --config jestconfig.json",
     "start:dev": "nodemon ./src/index.ts",
     "start:prod": "yarn build && node build/index.js",
-    "lint": "eslint . --ext .ts",
-    "prettier-format": "prettier --config .prettierrc.json 'src/**/*.ts' --write"
+    "prepublishOnly": "yarn lint && yarn test",
+    "prepare": "yarn build",
+    "preversion": "yarn lint",
+    "version": "yarn prettify && git add -A src",
+    "postversion": "git push && push --tags"
   },
   "devDependencies": {
     "@types/jest": "^27.0.2",
