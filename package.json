@@ -1,0 +1,40 @@
+{
+  "name": "dotenv-validate",
+  "version": "1.0.0",
+  "description": "Validates the dotenv file via a config file that defines its schema",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "files": [
+    "build/**/*"
+  ],
+  "author": "Gal Zohar <galzohar@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf ./build",
+    "build": "yarn clean && tsc",
+    "start:dev": "nodemon ./src/index.ts",
+    "start:prod": "yarn build && node build/index.js",
+    "lint": "eslint . --ext .ts",
+    "prettier-format": "prettier --config .prettierrc.json 'src/**/*.ts' --write"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.11.7",
+    "@typescript-eslint/eslint-plugin": "^5.3.1",
+    "@typescript-eslint/parser": "^5.3.1",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.3.1",
+    "mocha": "^9.1.3",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.4.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.0.7",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
+  }
+}
